@@ -3,11 +3,11 @@ pipeline
     agent any
     stages
     {
-        stage('ContinuousDownload')
+       stage('ContinuousDownload')
         {
             steps
             {
-                git 'https://github.com/intelliqittrainings/maven.git'
+                git 'https://github.com/Chintzxd/ganesh.git'
             }
         }
         stage('ContinuousBuild')
