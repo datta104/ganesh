@@ -1,4 +1,4 @@
-pipeline
+/* pipeline
 {
     agent any
     stages
@@ -40,4 +40,43 @@ pipeline
             }
         }
     }
+}
+*/
+
+pipeline{
+
+agent any
+	
+tools {
+  maven 'maven-3.8.7'
+}
+   
+stages{
+    stage('CheckOutCode'){
+        steps{
+            git 'https://github.com/Chintzxd/ganesh.git'
+	}
+  }
+    stage('version') {
+      steps {
+        sh 'python --version'
+      }
+    }
+    stage('hello.py') {
+      steps {
+	git 'https://github.com/Chintzxd/ganesh.git'
+        sh 'python hello.py'
+      }
+    }
+   stage('shell') {
+      steps {
+        sh 'sh odd.sh'
+      }
+    }
+   stage('maven') {
+      steps {
+        sh 'mvn clean package'
+      }
+    }
+  }
 }
