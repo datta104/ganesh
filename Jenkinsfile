@@ -59,13 +59,13 @@ stages{
   }
     stage('version') {
       steps {
-        sh 'python --version'
+        sh 'python3 --version'
       }
     }
     stage('hello.py') {
       steps {
 	git 'https://github.com/Chintzxd/ganesh.git'
-        sh 'python hello.py'
+        sh 'python3 hello.py'
       }
     }
    stage('shell') {
